@@ -28,6 +28,8 @@ type TxnType =
 type Currency =
     | USD
     | EUR
+    | CAD
+    | JPY
     override this.ToString() = Utils.toString this
     static member FromString s = Utils.fromString<Currency> s
 

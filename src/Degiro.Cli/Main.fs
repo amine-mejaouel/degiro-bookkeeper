@@ -73,6 +73,13 @@ let main argv =
 
         // CSV cleaning
         let originalCsvContent = File.ReadAllText csvFilePath
+        let originalCsvContent =
+            originalCsvContent
+                .Replace("Date,Heure,Date de,Produit,Code ISIN,Description,FX,Mouvements,,Solde,,ID Ordre",
+                         "Date,Time,Value date,Product,ISIN,Description,FX,Change,,Balance,,Order ID")
+                .Replace("Impôts sur dividende", "Dividend Tax")
+                .Replace("Dividende", "Dividend")
+        
         let cleanCsv, isMalformed = cleanCsv originalCsvContent
 
         if isMalformed then

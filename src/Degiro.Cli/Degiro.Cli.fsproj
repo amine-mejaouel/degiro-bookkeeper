@@ -9,6 +9,9 @@
 
     <ItemGroup>
         <Compile Include="Main.fs" />
+        <Content Include="Account.csv">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
